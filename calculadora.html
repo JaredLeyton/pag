@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .calculator {
+      width: 300px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      background-color: #f9f9f9;
+    }
+    .calculator input[type="text"] {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 20px;
+      box-sizing: border-box;
+    }
+    .calculator input[type="button"] {
+      width: 48px;
+      height: 48px;
+      font-size: 20px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .calculator input[type="button"]:hover {
+      background-color: #ccc;
+    }
+  </style>
+<body>
+    <div class="Calc">
+        <input type="text" id="ans">
+        <div class="btn">
+            <input type="button" value='C' onclick="Clear()">
+            <input type="button" value='%' onclick="Solve('%')">
+            <input type="button" value='_' onclick="Back()">
+            <input type="button" value='/' onclick="Solve('/')">
+            <br>
+            <input type="button" value='7' onclick="Solve('7')">
+            <input type="button" value='8' onclick="Solve('8')">
+            <input type="button" value='9' onclick="solve('9')">
+            <input type="button" value='x' onclick="Solve('*')">
+            <br>
+            <input type="button" value='4' onclick="Solve('4')">
+            <input type="button" value='5' onclick="Solve('5')">
+            <input type="button" value='6' onclick="solve('6')">
+            <input type="button" value='-' onclick="Solve('-')">
+            <br>
+            <input type="button" value='1' onclick="Solve('1')">
+            <input type="button" value='2' onclick="Solve('2')">
+            <input type="button" value='3' onclick="solve('3')">
+            <input type="button" value='+' onclick="Solve('+')">
+            <br>
+            <br>
+            <input type="button" value="00" onclick="Solve('00')">
+            <input type="button" value="0" onclick="Solve('0')">
+            <input type="button" value="." onclick="solve('.')">
+            <input type="button" value="=" onclick="Result()">
+
+
+            <script>
+                const Solve=(val) => {
+                    const v=document.getElementById('ans');
+                    v.value +=val;               
+                }
+                const Clear = () =>{
+                    const input=document.getElementById('ans');
+                    input.value='';
+                }
+                const Result =() => {
+                    const v1= document.getElementById('ans').value;
+                    const v2= eval(v1);
+                    document.getElementById('ans').value=v2;    
+                }
+                const back=() =>{
+                    const back = document.getElementById8('ans');
+                    back.value= back.value.slice(0,-1);
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>
